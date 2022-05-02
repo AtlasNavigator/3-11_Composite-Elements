@@ -9,7 +9,7 @@
 <div class="container">
   <div class="content">
     <div class="row">
-      <input type="text">
+      <input id="input" type="text">
       <button id="submit">Enter</button>
     </div>
     <table>
@@ -67,7 +67,7 @@
     action.textContent = "Mark Complete";
     action.addEventListener('click', function(){
       newRow.remove();
-      addItemToIncompleteTable(toDoItem);
+      addItemToCompleteTable(toDoItem);
     })
     actionTag.appendChild(action);
     newRow.appendChild(actionTag);
