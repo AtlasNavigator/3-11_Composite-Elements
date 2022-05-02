@@ -10,7 +10,7 @@
   <div class="content">
     <div class="row">
       <input type="text">
-      <button id="Submit">Enter</button>
+      <button id="submit">Enter</button>
     </div>
     <table>
       <thead>
@@ -72,6 +72,23 @@
     actionTag.appendChild(action);
     newRow.appendChild(actionTag);
     incomplete.appendChild(newRow);
+  }
+
+  function addItemToCompleteTable(toDoItem) {
+    let newRow = document.createElement('tr');
+    let descriptionTag = document.createElement('td');
+    descriptionTag.textContent = toDoItem;
+    newRow.appendChild(descriptionTag);
+    let actionTag = document.createElement('td');
+    let action = document.createElement('button');
+    action.textContent = "Mark Incomplete";
+    action.addEventListener('click', function(){
+      newRow.remove();
+      addItemToIncompleteTable(toDoItem);
+    })
+    actionTag.appendChild(action);
+    newRow.appendChild(actionTag);
+    complete.appendChild(newRow);
   }
 </script>
 </body>
